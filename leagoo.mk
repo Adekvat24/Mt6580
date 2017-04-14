@@ -6,8 +6,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_COPY_FILES += \
 $(LOCAL_PATH)/zImage:kernel
 
-
-алее добавляем хардварные файлы, очень важно, список их можно уточнить, все зависит от того какое железо у вас в девайсе (датчики и пр.):
 PRODUCT_COPY_FILES += \
 frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
 frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
@@ -32,3 +30,17 @@ frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/
 frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
 frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
 frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
+
+$(call inherit-product-if-exists, vendor/leagoo/m8/leagoo.mk
+
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+PRODUCT_NAME := leagoo
+PRODUCT_DEVICE := m8
+PRODUCT_BRAND := leagoo
+PRODUCT_MANUFACTURER := leagoo
+PRODUCT_MODEL := Leagoo M8
+
+
+
