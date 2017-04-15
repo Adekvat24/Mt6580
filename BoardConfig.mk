@@ -1,10 +1,18 @@
 # mt6580 platform boardconfig
-LOCAL_PATH := device/infinix/x510
--include vendor/infinix/x510/BoardConfigVendor.mk
+#LOCAL_PATH := device/infinix/x510
+#-include vendor/infinix/x510/BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
+#TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
+#no driver
 USE_CAMERA_STUB := true
+BOARD_USES_GENERIC_AUDIO := true
+
+DISABLE_DEXPREOPT := true
+#port touch screen
+BOARD_USE_LEGACY_TOUCHSCREEN := true
+
+
 TARGET_PROVIDES_INIT_RC := true
 
 # Platform
