@@ -1,0 +1,18 @@
+
+ubuntu:
+  image: ubuntu:xenial
+  script:
+  - apt-get update -qyy
+  - apt-get install -qyy curl bc make git build-essential
+  - git clone https://github.com/Adekvat24/Leagoo-m8-mtk6580- #сюда пишем путь к тулчейну на гитхаб или не на гитхаб.
+  - export PATH=$PATH:$PWD/Leagoo-m8-mtk6580-/bin/ #тут тоже меняем путь к тулчейну, в зависимости от названия
+  - arm-cortex-linux-gnueabi-gcc --version #проверяем, прописался ли тулч
+  - export KBUILD_BUILD_USER=Adekvat24
+  - export KBUILD_BUILD_HOST=SRT
+  - export ARCH=arm 
+  - export CROSS_COMPILE=$PWD/arm-cortex-linux-gnueabi-linaro_5.2/bin/arm-cortex-linux-gnueabi- #тут тоже меняем путь к тулчейну, в зависимости от названия
+  - make -j2 blahblahblah_defconfig 1>/dev/null 
+  - make -j2  1>builds.log 2>errors.log 
+  - curl --upload-file builds.log https://transfer.sh/builds.log  |grep transfer
+  - curl --upload-file errors.log https://transfer.sh/errors.log  |grep transfer
+  - curl --upload-file arch/arm/boot/zImage-dtb https://transfer.sh/zImage-dtb |grep transfer
