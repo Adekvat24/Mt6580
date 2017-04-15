@@ -3,12 +3,7 @@ PRODUCT_COPY_FILES += \
 $(LOCAL_PATH)/system/lib/libEGL.so:system/lib/libEGL.so
 $(LOCAL_PATH)/system/lib/libEGL_orig.so:system/lib/libEGL_orig.so
 $(LOCAL_PATH)/system/lib/libGLES_mali.so:system/lib/libGLES_mali.so
-$(LOCAL_PATH)/system/lib/libGLES_mali.so:system/lib/libGLES_mali.so
-$(LOCAL_PATH)/system/lib/libGLES_trace.so:libGLES_trace.so
-$(LOCAL_PATH)/system/lib/libGLES_trace.so:libGLES_trace.so
-$(LOCAL_PATH)/system/lib/libGLES_trace.so:libGLES_trace.so
-$(LOCAL_PATH)/system/lib/libGLES_trace.so:libGLES_trace.so
-$(LOCAL_PATH)/system/lib/libGLES_trace.so:libGLES_trace.so
+$(LOCAL_PATH)/system/lib/libGLES_trace.so:system/lib/libGLES_trace.so:libGLES_trace.so
 $(LOCAL_PATH)/system/lib/libGLESv1_CM.so:
 $(LOCAL_PATH)/system/lib/libGLESv1_CM_orig.so:
 $(LOCAL_PATH)/system/lib/libGLESv2.so:
